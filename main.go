@@ -29,8 +29,8 @@ func main() {
 	// Set your Telegram bot token
 	botToken := "token"
 	envToken := os.Getenv("TELE_TOKEN")
+	fmt.Println("envToken",envToken)
 	if len(envToken) > 0 {
-		fmt.Println("envToken",envToken)
 		botToken = envToken
 	}
 	
