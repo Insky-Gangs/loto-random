@@ -28,7 +28,12 @@ type BotTask struct {
 func main() {
 	// Set your Telegram bot token
 	botToken := "token"
-
+	envToken := os.Getenv("TELE_TOKEN")
+	if len(envToken) > 0 {
+		fmt.Println("envToken",envToken)
+		botToken = envToken
+	}
+	
 	// Create a new bot API instance
 	bot, err := tgbotapi.NewBotAPI(botToken)
 	if err != nil {
